@@ -34,9 +34,10 @@ oppia.constant(
   '/exploration/metadata_search?q=<query>');
 
 oppia.controller('CollectionEditor', [
-  'CollectionEditorStateService',
-  function(CollectionEditorStateService) {
+  '$scope', 'CollectionEditorStateService',
+  function($scope, CollectionEditorStateService) {
     // Load the collection to be edited.
     CollectionEditorStateService.loadCollection(GLOBALS.collectionId);
+    $scope.collectionTitle = title;
   }
 ]);
